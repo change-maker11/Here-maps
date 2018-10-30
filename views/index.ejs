@@ -1,0 +1,44 @@
+<head>
+        <meta name="viewport" content="width=300px,initial-scale=1.0">
+        <link href="mystyle.css" rel="stylesheet" type="text/css">
+    <title>Welcome</title>
+</head>
+<body>
+        <table>
+        <tr>
+                <td><a href="default.asp"><img src="logo.jpg" height="40px" width="50px" id="logo"></a></td>
+                <td><a href="/">Home</a></td>
+                <td><a href="/map"><%= login %> </a></td>
+                <td><a href="/map/report"></a></td>
+                <td><a href="/logout"><%= logout %></a></td>
+                </tr>
+            </table></div><br>
+        <form method="POST" action="/login">
+        <u>Login existing account</u><br><br>
+        <input type="text" placeholder="Enter username" name="email" required id="email" >
+        <input type="password" placeholder="password" name='pass' required id="pass">
+        <button type="submit" value="Login">Login</button>
+       <p id="warn"><b> <%= data %></b></p><p id="warn"><h2><%= sucess%></h2></p>
+    </form>
+    <form method="POST" id="new" action="/new" enctype="multipart/form-data">
+      <p id="welcome"><u>Create new Account</u></p>
+        <input type="text" placeholder="Full name" name='firstname' value="<%=values.firstname %>" required>&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+        <input type="number" placeholder="Date" name='date' value="<%=values.date %>"required min=1 max=31 id="date-input">&nbsp;&nbsp;&nbsp;
+        <input type="number" placeholder="Month" name='month' value="<%=values.month %>"required min=1 max=12 id="date-input">&nbsp;&nbsp;&nbsp;
+        <input type="number" placeholder="Year" name='year' value="<%=values.year %>" required min=1920 max=2020 id="date-input"><br><br>
+        <input type="text" placeholder="username" name="newemail" required id="email">&nbsp;&nbsp;&nbsp;
+        <input type="password" placeholder="password" name="pass" required id="pass"><br><br><div id="warn"><b><%= check%></b></div><br><br>
+       Address:&nbsp;&nbsp;&nbsp;  <textarea name="address" id="address" placceholder="address"><%=values.address%></textarea><br><br>
+        Add profile pic here:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="file" name="pic" id="profile" required><br>
+
+        <br><br>
+        Add driving liscense here:
+        <input type="file" name="pic" id="liscense" required><br>
+
+        <br><br>
+        Add Adhaar here:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="file" name="pic" id="adhaar" required><br><br>
+        <button type="submit" value="create">New account</button>
+    </form><br>
+</body>

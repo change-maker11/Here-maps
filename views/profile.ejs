@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>PROFILE PAGE</title>
+        <link href="mystyle.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+            <div><ul>
+                    <li><a href="default.asp"><img src="logo.jpg" height="40px" width="50px" id="logo"></a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/map"><%= data.name%>'s location</a></li>
+                    <li><a href="/map/report">report</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                  </ul></div> <br><br>
+                  <div id="maindiv">
+        <img src="uploads/<%=data.profile %>" height="200px" width="200px">
+        <h2 id="details"><strong>Name:</strong> <%= data.name%>  &nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+          <strong>DOB :</strong><%= data.date %>/<%= data.month %>/<%= data.year %><br><br>
+          <strong>Address :</strong><%= data.address %> </h2><br>
+      <br><br><br><hr>
+      <img src="uploads/<%=data.liscense %>" height="200px" width="200px">
+      <img src="uploads/<%=data.adhaar %>" height="200px" width="200px" id="adhaar1" >
+      <div style="float:left;clear:left;"> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<b>Liscense</b></div>
+      <div style="float:right"><b>Adhaar</b> &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <br><br>
+       <p> <form action="/edit"  method="POST">
+        <input type="text"  name="email" id="email" value="<%= data.username%>" hidden >
+        <button type="submit" id="homepage-button" >Edit Details</button>
+        </form></p><br><br><br><br><br><br>
+        </div>
+   </body>
+</html>

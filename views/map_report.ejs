@@ -1,0 +1,88 @@
+<html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js" 
+      type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js" 
+      type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" 
+      type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" 
+      href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+       <script>
+       
+function map_display(){
+    console.log("Hello");
+    function onPositionrecieved(position){
+        console.log(position);
+        var platform = new H.service.Platform({
+            app_id:   '5An0ihXCtCVuGETTN5y9', // to use Google Maps for Work
+            app_code: 'bk70IwvqFSHQR4Luc_FroA', 
+            });
+        
+            // Obtain the default map types from the platform object
+            var maptypes = platform.createDefaultLayers();
+            // Instantiate (and display) a map object:
+            var map = new H.Map(
+            document.getElementById('mapContainer'),
+            maptypes.normal.map,
+            {
+              zoom: 15,
+              center: { lng: position.coords.longitude, lat:position.coords.latitude }
+            });
+            var ui = H.ui.UI.createDefault(map,maptypes);
+            var x=document.getElementsByTagName("li");
+            console.log(x[0].innerHTML);
+            var points= [{lat:x[1].innerHTML,lng:x[0].innerHTML}];
+              for(var i=2;i<x.length-1;i+=2)
+              {
+                  points.push({lat:x[i+1].innerHTML,lng:x[i].innerHTML});
+              }
+              console.log(points);
+             var linestring = new H.geo.LineString();
+         points.forEach(function(point) {
+        linestring.pushPoint(point);
+});
+
+// Initialize a polyline with the linestring:
+var polyline = new H.map.Polyline(linestring, { style: { lineWidth: 10 }});
+
+// Add the polyline to the map:
+map.addObject(polyline);
+
+// Zoom the map to make sure the whole polyline is visible:
+map.setViewBounds(polyline.getBounds());
+     }
+
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(onPositionrecieved);
+    }
+};
+map_display();
+
+
+
+       </script>
+  </head>
+  <link href="mystyle.css" rel="stylesheet" type="text/css">
+
+  <body>
+        <div>
+            <table>
+            <tr>
+                <td><a href="default.asp"><img src="logo.jpg" height="40px" width="50px" id="logo"></a></td>
+                <td><a href="/">Home</a></td>
+                <td><a href="/map"><%=login%> </a></td>
+                <td><a href="/map/report">Report</a></td>
+                <td><a href="/logout">Logout</a></td>
+                </tr>
+            </table></div><br>
+  <div style="width: 100%; height: 89%" id="mapContainer"></div>
+<div><ul style="visibility:hidden">
+    <%for(var result in data){%>
+     <li><%=data[result].lon%></li> <li> <%=data[result].lat%></li>
+     <%}%>
+    </ul>
+</div>  
+</body>
+</html>

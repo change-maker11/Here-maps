@@ -1,0 +1,10 @@
+create database map;
+use map;
+create table info(username varchar(50),password varchar(50),
+name varchar(50),date int(2),month int(2),year int(4),address varchar(200),
+profile varchar(500),
+liscense varchar(500),
+adhaar varchar(500));
+ 
+create table position
+ (user varchar(500) ,lon float,lat float,time bigint);

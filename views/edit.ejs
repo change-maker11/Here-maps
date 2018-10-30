@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>PROFILE PAGE</title>
+        <link href="mystyle.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+            <div><ul>
+                    <li><a href="default.asp"><img height="40px" width="50px" src="logo.jpg" id="logo"></a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/map"><%= data.name%></a></li>
+                    <li><a href="/logout">Logout</a></li>
+                  </ul></div> 
+<form method="POST" id="new" action="/newdetails" enctype="multipart/form-data">
+    <p id="welcome"><u>Edit Your Details</u></p>
+      <input type="text" placeholder="Full name" name='firstname' value="<%=data.name %>" required>&nbsp;&nbsp;&nbsp;&nbsp;<br><br>
+      <input type="number" placeholder="Date" name='date' value="<%=data.date %>"required min=1 max=31 id="date-input">&nbsp;&nbsp;&nbsp;
+      <input type="number" placeholder="Month" name='month' value="<%=data.month %>"required min=1 max=12 id="date-input">&nbsp;&nbsp;&nbsp;
+      <input type="number" placeholder="Year" name='year' value="<%=data.year %>" required min=1920 max=2020 id="date-input"><br><br>
+      <input type="email" placeholder="username" name="newemail"value="<%=data.username %>" required id="email" readonly>&nbsp;&nbsp;&nbsp;
+      <input type="password" placeholder="password" name="pass" value="<%=data.password %>" required id="pass"><br><br>
+     Address:&nbsp;&nbsp;&nbsp;  <textarea name="address" id="address" placceholder="address"><%=data.address %></textarea><br><br>
+      Edit profile pic here:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="file" name="pic" id="profile" value="<%=data.profile %>"><br><input id="oldprofile" value="<%=data.profile %>" name="oldprofile" hidden>
+
+      <br><br>
+      Edit driving liscense here:&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="file" name="pic1" id="liscense" value="<%=data.liscense %>"><br><input id="oldliscense" value="<%=data.liscense %>" name="oldliscense" hidden>
+
+      <br><br>
+      Edit Adhaar here:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="file" name="pic2" id="adhaar" value="<%=data.adhaar %>"><br><input id="oldprofile" value="<%=data.adhaar %>" name="oldadhaar" hidden>
+      <br><br><button type="submit" value="create">Save</button>
+  </form><br>
+  </body>
+  </html>
