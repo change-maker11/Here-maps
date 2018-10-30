@@ -14,9 +14,10 @@ according to the time stamp assigned.
 3. open "sql_connection.js" file ,replace password in line 6 with your mysql password.
 4. open command prompt.(start->cmd->press enter)
 5. Go to the folder in which the files are saved.
-6. write "nodemon startcopy.js".
-7. cmd should display "server up at 1000,sql connected". means everything is running good.
-8. Open web browser and visit link "localhost:1000".
+6. write command "npm install". this will install all the project dependecies in your PC. 
+7. after completion of installation,Write command "nodemon startcopy.js".
+8. cmd should display "server up at 1000,sql connected". means everything is running good.
+9. Open web browser and visit link "localhost:1000".
 
 
 #Usage
