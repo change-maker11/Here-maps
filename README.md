@@ -6,7 +6,7 @@ the data of user's location is stored in database every 10 sec.this data is used
 to generate a report and display the whole route taken by the user in the map 
 according to the time stamp assigned.
 
-#Setting-up
+# Setting-up
 
 1. open mysql command line client and login by entering your mysql password
 2. open the "Database.txt" file and paste the whole code into mysql command 
@@ -20,7 +20,7 @@ according to the time stamp assigned.
 9. Open web browser and visit link "localhost:1000".
 
 
-#Usage
+# Usage
 
 1. on visiting "localhost:1000" login/signup page should displayed.
 2. click on "Goto map" in navigation bar to see map with your current location marked as "H"
@@ -38,4 +38,4 @@ according to the time stamp assigned.
   
   
   
-  #Thank-You-For-Visiting
+  # Thank-You-For-Visiting
