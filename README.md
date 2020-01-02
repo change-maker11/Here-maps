@@ -1,4 +1,4 @@
-# Here-maps
+# Here-maps-Location-Tracker
 location tracker and login app 
 
 The web app uses geo location to display user's current location using here maps.
