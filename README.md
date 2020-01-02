@@ -19,6 +19,16 @@ according to the time stamp assigned.
 8. cmd should display "server up at 1000,sql connected". means everything is running good.
 9. Open web browser and visit link "localhost:1000".
 
+# Major Features
+1. Store user's location automatically every 10 sec to genrate map of route taken by the user, this could be extremely useful for vehicle/ person tracking and surviellence.
+2. User is required to upload files required for proper identification to ensure authenticity.
+3. Proper error handeling have been provided for different fields and Information entered by user is remembered and is sent back in case of error so that user need not enter all details again.
+4. user's current location is also displayed on the map which is updated regurlarly to be certain of current position .
+5. The details and files uploaded could also be updated after the account creation in case of any false info is entered by mistake. 
+
+![alt text](https://github.com/Puneet-Jain-18/Here-maps/blob/master/preview/Screenshot%20(26).png)
+
+Please see preview folder for more screenshots.
 
 # Usage
 
