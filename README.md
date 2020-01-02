@@ -12,12 +12,26 @@ according to the time stamp assigned.
 2. open the "Database.txt" file and paste the whole code into mysql command 
    line client.(Remember to press "enter" in the end).
 3. open "sql_connection.js" file ,replace password in line 6 with your mysql password.
-4. open command prompt.(start->cmd->press enter)
-5. Go to the folder in which the files are saved.
-6. write command "npm install". this will install all the project dependecies in your PC. 
-7. after completion of installation,Write command "nodemon startcopy.js".
-8. cmd should display "server up at 1000,sql connected". means everything is running good.
-9. Open web browser and visit link "localhost:1000".
+4. open command prompt/terminal.
+5. Go to directory in which project files are present
+6. Run command 
+````
+npm install
+````
+this will install all the project dependecies in your PC. 
+7. after completion of installation,Run Command 
+````
+nodemon startcopy.js
+````
+8. cmd should display 
+````
+server up at 1000,sql connected 
+````
+means everything is running good and project has been sucsefully built and running.<br />
+9. Open web browser and visit
+````
+localhost:1000
+````
 
 # Major Features
 1. Store user's location automatically every 10 sec to genrate map of route taken by the user, this could be extremely useful for vehicle/ person tracking and surviellence.
