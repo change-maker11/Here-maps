@@ -10,6 +10,6 @@
     "mysql": "^2.16.0",
     "node-heremaps": "0.0.2",
     "nodemon": "^1.18.5",
-    "socket.io": "^2.1.1"
+    "socket.io": "^2.4.0"
   }
 }
